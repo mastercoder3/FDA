@@ -1,0 +1,108 @@
+page-details{
+    ion-fab[bottom]{
+        bottom: 30px;
+    }
+}
+
+// Detail Image Section
+// --------------------------------------------------
+.detail-head{
+    @extend %cover;
+    background-image: url(../assets/img/papper.png);
+    padding: 20px 20px 10px 20px;
+    margin-top: 5px;
+    position: relative;
+    .like-share{
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        display: block;
+        ion-icon{
+            display: block;
+            margin-bottom: 15px;
+            font-size: 2rem;
+            color: darken(color($colors , garyColor), 30%);
+        }
+    }
+    img{
+        width: 140px;
+        height: 140px;
+        object-fit: contain;
+        -o-object-fit: contain;
+    }
+    .stars{
+        position: absolute;
+        bottom: 5px;
+        left: 15px;
+        ion-icon{
+            font-size: 1.6rem;
+            color: darken(color($colors , garyColor), 30%);
+            margin-right: 1px;
+        }
+    }
+}
+// Detail Title Section
+// --------------------------------------------------
+.detail-content{
+    h4{
+        color: color($colors , danger);
+        margin-top: 1px !important;
+    }
+    p{
+        color: #3e3d3d;
+    }
+}
+// Detail Size & Qty Section
+// --------------------------------------------------
+.more-options{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 15px 10px;
+    .row{
+        width: 180px;
+        margin: 0 auto;
+    }
+}
+.size , .op-btn{
+    color: #3e3d3d;
+    font-weight: 400;
+    font-size: 1.6rem;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 29px;
+    border-radius: 50%;
+}
+.qty{
+    border-top: none;
+}
+.op-btn{
+    background: none;
+    border: 1px solid color($colors , secondary);
+    ion-icon{
+        font-size: 1.2em !important;
+    }
+}
+.button-ios.activated{
+    background: transparent !important;
+}
+.mid-btn{
+    border: none;
+}
+// Total Price Section
+// --------------------------------------------------
+.price{
+    p{
+        color: #757575;
+        font-size: 1.8rem;
+    }
+}
+.cart-no{
+    position: absolute;
+    top: 12px;
+    left: 29px;
+    padding: 2px 5px;
+    ion-icon{
+        font-size: 1.4rem !important;
+    }
+}

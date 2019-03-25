@@ -1,0 +1,57 @@
+
+<ion-content padding>
+    <ion-list class="setting-content">
+
+      <ion-list-header no-lines>Type of dough</ion-list-header>
+      <ion-item-group class="fst-group">
+        <ion-item no-lines>
+          <ion-label>Pan</ion-label>
+          <ion-checkbox item-right></ion-checkbox>
+        </ion-item>
+        <ion-item no-lines>
+          <ion-label>Thin & Crispy</ion-label>
+          <ion-checkbox item-right></ion-checkbox>
+        </ion-item>
+        <ion-item no-lines>
+          <ion-label>Classic Crast</ion-label>
+          <ion-checkbox item-right></ion-checkbox>
+        </ion-item>
+        <ion-item no-lines>
+          <ion-label>Stuft Crast</ion-label>
+          <ion-checkbox item-right></ion-checkbox>
+        </ion-item>
+        <ion-item no-lines>
+          <ion-label>Cheesy End</ion-label>
+          <ion-checkbox item-right></ion-checkbox>
+        </ion-item>
+      </ion-item-group>
+
+      <ion-list-header no-lines>Type of Vegtable</ion-list-header>
+
+      <ion-item-group>
+        <ion-item no-lines>
+          <ion-label>Tomato</ion-label>
+          <ion-checkbox item-right></ion-checkbox>
+        </ion-item>
+        <ion-item no-lines>
+          <ion-label>Onions</ion-label>
+          <ion-checkbox item-right></ion-checkbox>
+        </ion-item>
+        <ion-item no-lines>
+          <ion-label>Papper</ion-label>
+          <ion-checkbox item-right></ion-checkbox>
+        </ion-item>
+        <ion-item no-lines>
+          <ion-label>Olive</ion-label>
+          <ion-checkbox checked="true" item-right></ion-checkbox>
+        </ion-item>
+      </ion-item-group>
+
+    </ion-list>
+
+    <ion-fab center bottom>
+    <button (click)="dismiss()" ion-fab color="primary">
+      <ion-icon name="md-checkmark"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

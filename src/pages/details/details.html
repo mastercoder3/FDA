@@ -1,0 +1,93 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>details</ion-title>
+    <ion-buttons end>
+      <button navPush="CartPage" ion-button icon-only>
+        <ion-icon name="md-cart"></ion-icon>
+      </button>
+    </ion-buttons> 
+  </ion-navbar>
+
+  <ion-toolbar color="primary" class="search-toolbar" *ngIf="showSearch">
+    <ion-searchbar color="primary"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<!--      Detail Image       -->
+  <div class="detail-head" text-center>
+    <div class="like-share">
+      <ion-icon name="md-heart" color="grayColor" (click)="activeLike()" [ngClass]="{'activeLike animated pulse infinite': like}"></ion-icon>
+      <ion-icon name="md-share" (click)="presentshareModal()" color="grayColor"></ion-icon>
+    </div>
+    <img src="assets/img/det-img.png" />
+    <div class="stars">
+      <ion-icon name="md-star"></ion-icon>
+      <ion-icon name="md-star"></ion-icon>
+      <ion-icon name="md-star"></ion-icon>
+      <ion-icon name="md-star"></ion-icon>
+      <ion-icon name="md-star"></ion-icon>
+    </div>
+  </div>
+    <!--      Detail Title       -->
+    <div class="detail-content" text-center padding>
+      <h4>Pepperoni Pizza</h4>
+      <p>Pepperoni, Cheese, Tomato, Olive and Pepper</p>
+      <!--      Detail Size       -->
+      <ion-grid class="more-options">
+        <ion-row justify-content-center>
+          <ion-col (click)="activeSize(1)" col-4 text-center>
+            <span class="size" [ngClass]="{'activeBorder2': Size==1}">S</span>
+          </ion-col>
+          <ion-col (click)="activeSize(2)" col-4 text-center>
+            <span class="size" [ngClass]="{'activeBorder2': Size==2}">M</span>
+          </ion-col>
+          <ion-col (click)="activeSize(3)" col-4 text-center>
+            <span class="size" [ngClass]="{'activeBorder2': Size==3}">L</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!--      Detail Qty       -->
+      <ion-grid class="qty more-options">
+        <ion-row justify-content-center>
+          <ion-col col-4 text-center>
+            <button ion-button icon-only class="op-btn" (click)="decrementQty(item)">
+              <ion-icon name="md-remove"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-4 text-center>
+            <button ion-button icon-only class="op-btn mid-btn">
+              {{qty}}
+            </button>
+          </ion-col>
+          <ion-col col-4 text-center>
+            <button ion-button icon-only class="op-btn" (click)="incrementQty(item)">
+              <ion-icon name="md-add"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!--      Total Price       -->
+      <ion-grid class="price" padding>
+        <ion-row>
+          <ion-col text-left col-6>
+            <p>50 $</p>
+          </ion-col>
+          <ion-col (click)="presentFilterModal()" text-right col-6>
+            <p>Extras</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </div>
+  <ion-fab center bottom>
+    <button navPush="CartPage" ion-fab color="primary">
+      <ion-icon name="md-cart"></ion-icon>
+      <ion-badge class="cart-no" color="danger"><ion-icon name="md-add"></ion-icon></ion-badge>
+    </button>
+  </ion-fab>
+</ion-content> 

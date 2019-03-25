@@ -1,16 +1,239 @@
-// http://ionicframework.com/docs/theming/
+// http://ionicframework.com/docs/v2/theming/
 
 
 // App Global Sass
 // --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.toolbar-ios{
+    ion-title{
+        padding: 0 65px 1px;
+    }
+}
+.bar-button-menutoggle-ios{
+    ion-icon{
+        font-size: 2.4rem;
+    }
+}
+.bar-button-ios{
+    font-size: 1.4rem;
+    ion-icon{
+        font-size: 1.5em !important;
+        margin-right: 7px;
+    }
+}
+.back-button-icon-ios{
+    font-size: 2.2rem;
+    margin-left: 10px;
+}
+.app-content-bg{
+    @extend %main-bg;
+    @extend %cover;
+}
+.app-header{
+    .toolbar-background-ios{
+        background: transparent;
+        border: none;
+    }
+}
+.logo{
+    padding-top: 45px !important;
+}
+.stars{
+    display: flex;
+    align-items: center;
+    margin: 10px 0 7px 0;
+    ion-icon{
+        color: #faca43;
+        font-size: 1.5rem;
+    }
+    p{
+        display: inline-block;
+        margin: 0 0 0 10px;
+        font-size: 1.3rem !important;
+    }
+}
+h4{
+    font-size: 1.75rem;
+    color: color($colors , danger);
+}
+.activeBorder{
+    border: 1px solid color($colors,danger);
+    border-radius: 4px;
+}
+.activeBorder2{
+    border: 1px solid color($colors , secondary);
+}
+.activeLike{
+    color: color($colors,danger) !important;
+}
+// Header Search
+// --------------------------------------------------
+.search-toolbar{
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 70%;
+    min-height: 45px;
+    padding: 0;
+    .searchbar-md{
+        .searchbar-search-icon{
+            top: 9px;
+        }
+    }
+    .searchbar-ios{
+        .searchbar-input{
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+// App statusbar(IOS platform) Sass
+// --------------------------------------------------
+.statusbar-padding{
+    padding-top: calc(20px + 4px);
+    min-height: calc(56px + 20px);
+    &.search-toolbar{
+        top: 19px;
+    }
+    &.tabs-toolbar, &.search-toolbar{
+        padding-top: 4px;
+        min-height: 45px;
+    }
+    &.app-content-bg{
+        .scroll-content{
+            margin-top: 150px !important;
+        }
+    }
+}
+ion-footer{
+    .statusbar-padding{
+        padding-top: 4px;
+        min-height: 50px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .ios .modal-wrapper > .ion-page > ion-header > .share-toolbar.statusbar-padding:first-child{
+        padding-top: 4px;
+        min-height: 56px;
+        ion-title{
+            padding-top: 2px;
+            height: 100%;
+            min-height: 100%;
+        }
+    }
+}
+// Main Menu Sass
+// --------------------------------------------------
+ion-menu{
+    .menu-inner{
+        width: 80%;
+        height: 460px;
+        top: calc((100% - 460px)/2);
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        @extend %cover;
+        background-image: url(../assets/img/menu-bg.png) !important;
+        background-color: color($colors , secondary) !important;
+        background-blend-mode: multiply !important;
+    }
+    .toolbar-background-ios , .content-ios{
+        background: transparent;
+    }
+    .item-ios{
+        background: transparent;
+        color: white;
+        ion-label{
+            font-size: 1.5rem;
+        }
+    }
+    ion-footer{
+        .toolbar-background-ios{
+            border: none !important;
+        }
+        .toolbar-ios{
+            padding: 0;
+        }
+        .button-ios{
+            margin: 0;
+            height: 50px;
+            border-radius: 0;
+        }
+    }
+}
+
+.user-profile{
+    padding: 0 0 20px 0;
+    margin: 0 16px;
+    width: calc(100% - 32px);
+    border-bottom: 1px solid white !important;
+    ion-avatar{
+        position: relative;
+        img{
+            width: 80px;
+            height: 80px;
+        }
+        ion-icon{
+            position: absolute;
+            right: -5px;
+            bottom: -4px;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            border-radius: 50%;
+            background-color: color($colors , primary);
+            color: white;
+        }
+    }
+    .item-inner{
+        padding: 0 !important;
+    }
+    h2 , p{
+        color: white;
+    }
+    p{
+        font-size: 1.3rem;
+    }
+}
+
+.menu-list{
+    margin: 40px 20px 20px 20px;
+    .item-ios{
+        width: 50%;
+        float: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid white !important;
+        &:nth-child(2n+1){
+            border-right: 1px solid white;
+        }
+        &:last-child{
+            border-bottom: none !important;
+        }
+        &:nth-last-of-type(2){
+            border-bottom: none !important;
+        }
+        &:nth-child(4n+1){
+            padding-top: 0;
+            -webkit-clip-path: polygon(100% 0%, 100% 80%, 84% 100%, 0 100%, 0% 50%, 0 0);
+            clip-path: polygon(100% 0%, 100% 80%, 84% 100%, 0 100%, 0% 50%, 0 0);
+        }
+        &:nth-child(4n+2){
+            padding-top: 0;
+            -webkit-clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 16% 100%, 0 80%, 0 0);
+            clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 16% 100%, 0 80%, 0 0);
+        }
+        &:nth-child(4n+3){
+            -webkit-clip-path: polygon(70% 0, 100% 20%, 100% 100%, 0 100%, 0 50%, 0 0);
+            clip-path: polygon(70% 0, 100% 20%, 100% 100%, 0 100%, 0 50%, 0 0);
+        }
+        &:nth-child(4n+4){
+            -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 100%, 0 15%, 15% 0);
+            clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 100%, 0 15%, 15% 0);
+        }
+    }
+    ion-icon{
+        display: block;
+        margin-bottom: 15px;
+    }
+}

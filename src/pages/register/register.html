@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar class="app-header" hideBackButton="true">
+    <div class="logo" text-center padding>
+      <img src="assets/img/logo.png" />
+    </div>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content class="app-content-bg" text-center>
+
+  <div class="Loginpage">
+
+        <div class="form-content" >
+          <div class="reg-content">
+              <ion-list class="app-form" no-margin>
+                <ion-item no-lines>
+                  <ion-icon name="md-mail" color="danger" item-left></ion-icon>
+                  <ion-input type="text" placeholder="Email"></ion-input>
+                </ion-item>
+                
+                <ion-item no-lines>
+                  <ion-icon name="md-lock" color="danger" item-left></ion-icon>
+                  <ion-input type="password" placeholder="Password"></ion-input>
+                </ion-item>
+
+                <ion-item no-lines>
+                  <ion-icon name="md-lock" color="danger" item-left></ion-icon>
+                  <ion-input type="password" placeholder="Confirm Password"></ion-input>
+                </ion-item>
+
+                <ion-item no-lines>
+                  <ion-icon name="md-call" color="danger" item-left></ion-icon>
+                  <ion-input type="tel" placeholder="Mobile no.,"></ion-input>
+                </ion-item>
+
+                <ion-item no-lines>
+                  <ion-icon name="ios-pin" color="danger" item-left></ion-icon>
+                  <ion-input type="text" placeholder="Address"></ion-input>
+                </ion-item>
+              </ion-list>
+              <p class="forget-pass" navPush="LoginPage" text-right>Already have an account?</p>
+          </div>
+        </div>
+
+  </div>
+
+</ion-content>
+
+<ion-footer  >
+  <ion-toolbar color="secondary">
+    <ion-title navPush="HomePage">Sign up</ion-title>
+  </ion-toolbar>
+</ion-footer>

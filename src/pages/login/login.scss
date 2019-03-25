@@ -1,0 +1,110 @@
+.app-content-bg{
+    .scroll-content{
+        margin-top: 120px !important;
+    }
+    h4{
+        font-size: 1.7rem;
+        color: color($colors , danger);
+        margin: 5px 0;
+    }
+    .or{
+        position: relative;
+        span{
+            display: inline-block;
+            white-space: nowrap;
+            background: color($colors , danger);
+            color: white;
+            width: 32px;
+            height: 32px;
+            line-height: 34px;
+            border-radius: 50%;
+            margin: 0 0 40px 0;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 0;
+            width: 40%;
+            border-bottom: 1px solid color($colors , primary);
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 14px;
+            right: 0;
+            width: 40%;
+            border-bottom: 1px solid color($colors , primary);
+        }
+    }
+    .fab-ios{
+        i{
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.form-content{
+    padding: 0 25px;
+}
+
+.app-form{
+    background: rgba(255, 255, 255, .45);
+    border-radius: 5px;
+    .item-ios{
+        background: transparent;
+        min-height: 5rem;
+        ion-icon{
+            font-size: 2rem;
+            min-height: 2rem;
+            margin-right: 12px;
+        }
+    }
+    .item-block{
+        border-bottom: 1px solid #d6d6d5 !important;
+        &:last-of-type{
+            border: none !important;
+        }
+        
+    }
+    input::-webkit-input-placeholder {
+        color: #4d4c4b;
+        font-size: 1.4rem;
+    }
+    input:-moz-placeholder {
+        color: #4d4c4b;
+        font-size: 1.4rem;
+    }
+}
+
+.forget-pass{
+    margin: 13px 17px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: color($colors , danger);
+}
+
+.social-media{
+    min-height: 90px;
+    .row{
+        justify-content: center;
+        min-height: 90px;
+        width: 180px;
+        margin: 0 auto;
+    }
+    ion-fab[center]{
+        top: 20px;
+    }
+    .fab{
+        box-shadow: none !important;
+    }
+}
+
+ion-footer{
+    .toolbar-title-ios{
+        font-size: 1.55rem !important;
+        text-align: center;
+        font-weight: normal !important;
+        color: color($colors , light) !important;
+    }
+}

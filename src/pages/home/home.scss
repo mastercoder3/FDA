@@ -1,3 +1,115 @@
 page-home {
+    [menuToggle]{
+        display: inline-block !important;
+    }
+}
 
+.head-btns{
+    .bar-button-ios{
+        width: 28px;
+        margin-right: 0;
+        margin-left: 5px;
+        ion-icon{
+            font-size: 2.1rem;
+            margin: 0;
+        }
+    }
+    .cart-no{
+        top: 0px;
+        left: 13px;
+        font-size: 1.2rem;
+        font-weight: normal;
+    }
+}
+
+.home-list{
+    margin-bottom: 5px;
+    .item-ios{
+        margin: 5px 5px 0 5px;
+        width: calc(100% - 10px);
+        background-color: color($colors , secondary);
+    }
+    h2{
+        @extend %overflow;
+       font-size: 1.8rem;
+        margin-bottom: 6px;
+        color: color($colors , primary);
+    }
+    p{
+        color: white;
+        height: 54px;
+        line-height: 18px;
+        white-space: normal;
+        text-transform: capitalize;
+    }
+    ion-thumbnail{
+        img{
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            -o-object-fit: contain;
+        }
+    }
+    ion-icon[item-right]{
+        margin: 5px 5px 120px 0;
+        font-size: 2.2rem;
+        color: darken(color($colors , garyColor), 8%);
+    }
+    .stars{
+        margin-top: 40px;
+        margin-bottom: 0;
+        p{
+            height: auto;
+        }
+    }
+}
+
+.offer{
+    width: 80px;
+    margin: 0 5px;
+    padding: 10px;
+    height: 161px;
+    float: left;
+    display: flex;
+    align-items: center;
+    background-color: color($colors , danger);
+    p{
+        @extend %overflow;
+        width: 60px;
+        height: auto;
+        font-size: 17px;
+        margin-bottom: 3px;
+    }
+    h4{
+        color: white;
+        font-weight: normal;
+        font-size: 21px;
+        height: 75px;
+        width: 60px;
+        overflow: hidden;
+    }
+}
+
+.offer-item{
+    @extend %item-bg;
+    @extend %cover;
+    height: 161px;
+    width: calc(100% - 95px) !important;
+    margin: 5px 5px 5px 0 !important;
+    padding-left: 10px !important;
+    ion-thumbnail{
+        margin-right: -21px !important;
+        margin-top: 40px !important;
+        img{
+            width: 90px;
+            height: 90px;
+        }
+    }
+    h2{
+        @extend %overflow;
+        color: color($colors , danger);
+    }
+    p{
+        color: color($colors , dark);
+    }
 }

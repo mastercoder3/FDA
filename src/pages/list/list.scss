@@ -1,0 +1,19 @@
+
+.main-list{
+    h2{
+        font-size: 1.7rem !important;
+    }
+    .description{
+        margin: 10px 0;
+        font-size: 1.29rem;
+    }
+    .user-action{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: darken(color($colors , garyColor), 10%);
+    }
+    ion-thumbnail{
+        margin-right: 10px !important;
+    }
+}

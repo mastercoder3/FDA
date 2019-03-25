@@ -4,22 +4,31 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-
+import { MyApp } from './app.component'; 
+var config = {
+  backButtonText: '',
+  backButtonIcon: 'md-arrow-back',
+  modalEnter: 'modal-slide-in',
+  modalLeave: 'modal-slide-out',
+  tabsPlacement: 'bottom',
+  pageTransition: 'ios',
+  mode:'ios',
+  menuType: 'overlay',
+  scrollPadding: false,  
+  scrollAssist: true, 
+  autoFocusAssist: false, 
+};
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp, 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
   ],
   providers: [
     StatusBar,

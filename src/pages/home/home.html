@@ -1,14 +1,70 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="primary" hideBackButton="true">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>home</ion-title>
+    <ion-buttons class="head-btns" end>
+      <button (click)="toggleSearch()" ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button navPush="CartPage" ion-button icon-only>
+        <ion-icon name="md-cart"></ion-icon>
+        <ion-badge class="cart-no" color="danger">2</ion-badge>
+      </button>
+    </ion-buttons> 
   </ion-navbar>
+
+  <ion-toolbar color="primary" class="search-toolbar" *ngIf="showSearch">
+    <ion-searchbar color="primary"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-list class="home-list">
+    <div *ngFor="let item of MainList">
+<!--                Main List                   -->
+      <ion-item *ngIf="item.offer==0" no-lines>
+        <h2 navPush="DetailsPage">Hot & Spicy</h2>
+        <p navPush="DetailsPage">Hot spicy meat  with hot paper and cheese</p>
+        <div class="stars">
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <ion-icon name="md-star"></ion-icon>
+          <p no-margin>4.6</p>
+        </div>
+        <ion-thumbnail item-right>
+          <img src="assets/img/pizza.png" navPush="DetailsPage">
+        </ion-thumbnail>
+        <ion-icon name="md-heart" (click)="activeLike(item)" [ngClass]="{'activeLike animated pulse infinite': item.like}" item-right></ion-icon>
+      </ion-item>
+<!--                Offer List                   -->
+      <div *ngIf="item.offer==1">
+            <div class="offer">
+              <div>
+                <p no-margin>Buy</p>
+                <h4 no-margin>Two  & GET 1 Free</h4>
+              </div>
+            </div>
+            <ion-item class="offer-item" no-lines>
+              <h2 navPush="DetailsPage">Hot & Spicy</h2>
+              <p navPush="DetailsPage">Hot spicy meat  with hot paper and cheese</p>
+              <div class="stars">
+                <ion-icon name="md-star"></ion-icon>
+                <ion-icon name="md-star"></ion-icon>
+                <ion-icon name="md-star"></ion-icon>
+                <ion-icon name="md-star"></ion-icon>
+                <ion-icon name="md-star"></ion-icon>
+                <p no-margin>4.6</p>
+              </div>
+              <ion-thumbnail item-right>
+                <img src="assets/img/01.png" navPush="DetailsPage">
+              </ion-thumbnail>
+              <ion-icon name="md-heart" (click)="activeLike(item)" [ngClass]="{'activeLike animated pulse infinite': item.like}" item-right></ion-icon>
+            </ion-item>
+      </div>
+    </div>
+  </ion-list>
 </ion-content>

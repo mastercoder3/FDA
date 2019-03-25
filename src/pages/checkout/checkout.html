@@ -1,0 +1,73 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>checkout</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="checkout-content">
+  <h4 class="heading" text-center>Items : <span>2</span></h4>
+
+  <div class="detail-order" padding>
+    <p><span>Subtotal : </span>$ 100</p>
+    <p><span>Taxes : </span>$ 10</p>
+    <p><span>Total : </span>$ 200</p>
+    
+    <ion-item no-padding no-lines>
+      <ion-label fixed>Ship to :</ion-label>
+      <ion-input type="text" placeholder="24 Rose St.," disabled="true" (blur)="focusInput(address)" #address></ion-input>
+      <ion-icon name="md-create" (click)="focusInput(address)" item-right></ion-icon>
+    </ion-item>
+    <ion-item no-padding no-lines>
+      <ion-label fixed>Phone Number :</ion-label>
+      <ion-input type="text" placeholder="066991234 56789" disabled="true" (blur)="focusInput(tel)" #tel></ion-input>
+      <ion-icon name="md-create" (click)="focusInput(tel)" item-right></ion-icon>
+    </ion-item>
+  </div>
+
+  <ion-row class="option-prices" no-padding>
+      <ion-col no-padding col-6>
+        <ion-item class="price-search" mode="md" radio-group [(ngModel)]="typeOfCopy">
+          <ion-radio mode="md" value="hard" item-left checked></ion-radio>
+          <ion-label>Cash</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col no-padding col-6>
+        <ion-item class="price-search" mode="md" radio-group [(ngModel)]="typeOfCopy">
+          <ion-radio mode="md" value="soft" item-left></ion-radio>
+          <ion-label>Credit Card</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+  <ion-grid class="payment-method">
+    <ion-row>
+      <ion-col col-4 (click)="activeSelect(1)">
+        <img src="assets/img/visa.png" [ngClass]="{'activeBorder': selectImg==1}" />
+      </ion-col>
+      <ion-col col-4 (click)="activeSelect(2)">
+        <img src="assets/img/paypal.png" [ngClass]="{'activeBorder': selectImg==2}" />
+      </ion-col>
+      <ion-col col-4 (click)="activeSelect(3)">
+        <img src="assets/img/master.png" [ngClass]="{'activeBorder': selectImg==3}" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item no-lines>
+    <ion-label fixed>Card Number :</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <ion-title navPush="HomePage">Check out</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,62 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="cart-content" padding>
+  <h4 class="heading" text-center>Total : <span>100 $</span></h4>
+
+  <ion-list class="cart-list">
+    <ion-item *ngFor="let item of cartList" no-padding>
+      <ion-thumbnail item-left>
+        <img src="{{item.img}}">
+      </ion-thumbnail>
+      <h2>Pepperoni Pizza</h2>
+      <p>Pepperoni, Cheese, Cheese, Tomato, Olive and Pepper</p>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col col-4>
+            <span color="danger" class="size">50 $</span>
+          </ion-col>
+          <ion-col col-4>
+            <span class="size min-col">M</span>
+          </ion-col>
+          <ion-col (click)="removeItem(item)" col-4>
+            <span class="size">Delete</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-row class="qty more-options" item-right>
+        <ion-col col-4 text-center no-padding>
+          <button ion-button icon-only class="op-btn" (click)="incrementQty(item)">
+            <ion-icon name="md-add"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4 text-center no-padding>
+          <button ion-button icon-only class="op-btn mid-btn">
+            {{item.qty}}
+          </button>
+        </ion-col>
+        <ion-col col-4 text-center no-padding>
+          <button ion-button icon-only class="op-btn" (click)="decrementQty(item)">
+            <ion-icon name="md-remove"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <ion-title navPush="CheckoutPage">Check out</ion-title>
+  </ion-toolbar>
+</ion-footer>

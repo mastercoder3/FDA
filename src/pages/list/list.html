@@ -1,0 +1,53 @@
+<ion-header>
+   <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="md-menu"></ion-icon>
+    </button>
+    <ion-title text-capitalize>Cheese Pizza</ion-title>
+    <ion-buttons class="head-btns" end>
+      <button (click)="toggleSearch()" ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button navPush="CartPage" ion-button icon-only>
+        <ion-icon name="md-cart"></ion-icon>
+        <ion-badge class="cart-no" color="danger">2</ion-badge>
+      </button>
+    </ion-buttons> 
+  </ion-navbar>
+
+  <ion-toolbar color="primary" class="search-toolbar" *ngIf="showSearch">
+   <ion-searchbar color="primary"></ion-searchbar>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="main-list category-list" no-margin>
+    <ion-item *ngFor="let item of list" no-lines>
+      <h2 navPush="DetailsPage">{{item.title}}</h2>
+      <p navPush="DetailsPage" class="description">{{item.subtitle}}</p>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col col-7>
+            <div class="stars">
+              <ion-icon name="md-star"></ion-icon>
+              <ion-icon name="md-star"></ion-icon>
+              <ion-icon name="md-star"></ion-icon>
+              <ion-icon name="md-star"></ion-icon>
+              <ion-icon name="md-star-half"></ion-icon>
+              <p no-margin>4.6</p>
+            </div>
+          </ion-col>
+          <ion-col (click)="activeLike(item)" class="user-action" col-3>
+            <ion-icon name="md-heart" color="grayColor" [ngClass]="{'activeLike animated pulse infinite': item.like}"></ion-icon>
+          </ion-col>
+          <ion-col (click)="presentshareModal()" class="user-action">
+            <ion-icon name="md-share" color="grayColor"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-thumbnail navPush="DetailsPage" item-right>
+        <img src="{{item.img}}">
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+</ion-content>

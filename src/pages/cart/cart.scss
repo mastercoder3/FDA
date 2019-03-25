@@ -1,0 +1,66 @@
+.heading{
+    margin-bottom: 1.5rem;
+    span{
+        color: #3e3d3d;
+    }
+}
+
+.cart-list{
+    .item-inner{
+        border: none !important;
+    }
+    .item-ios{
+        border-bottom: .55px solid white;
+        &:first-child{
+            border-top: 0.55px solid white;
+        }
+        &:last-child{
+            border-bottom: 0.55px solid white;
+        }
+    }
+    ion-thumbnail{
+        margin-right: 10px !important;
+    }
+    .label-ios{
+        margin-right: 0 !important;
+    }
+    .item-inner{
+        padding: 0 !important;
+    }
+    h2{
+        @extend %overflow;
+        font-weight: 500;
+        color: color($colors , danger);
+    }
+    p{
+        color: #3e3d3d;
+        white-space: normal;
+        font-size: 1.3rem;
+        height: 30px;
+    }
+    .qty{
+        width: 50px;
+        height: 100%;
+        margin: 0 !important;
+        border: none;
+        padding-right: 0 !important;
+        display: block;
+        justify-content: center;
+    }
+    .op-btn{
+        width: 28px;
+        height: 28px;
+        line-height: 27px;
+    }
+    .button-ios.activated{
+        background: transparent !important;
+    }
+    .size{
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: color($colors , danger);
+    }
+    .min-col{
+        color: color($colors,dark);
+    }
+}

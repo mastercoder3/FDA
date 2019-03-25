@@ -1,0 +1,28 @@
+
+.category-list{
+    .item-ios{
+        @extend %item-bg;
+        @extend %cover;
+        margin: 7px 6px 0 6px;
+        width: calc(100% - 12px);
+        &:last-child{
+            margin-bottom: 7px;
+        }
+    }
+    h2{
+        @extend %overflow;
+        font-size: 2rem;
+        color: color($colors , danger);
+    }
+    p{
+        color: color($colors , dark);
+    }
+    .description{
+        white-space: normal;
+        height: 32px;
+    }
+    ion-thumbnail{
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+    }
+}

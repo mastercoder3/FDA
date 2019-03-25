@@ -1,0 +1,38 @@
+page-filter {
+    .item-ios{
+        min-height: 4rem;
+        .label-ios{
+            margin: 6px 8px 6px 0;
+            font-size: 1.55rem;
+        }
+        .checkbox-ios[item-right]{
+            margin: 5px 8px 4px 0;
+        }
+    }
+    .list-header-ios{
+        font-size: 1.6rem;
+        height: 3.2rem;
+        letter-spacing: initial;
+        text-transform: initial;
+        color: color($colors , secondary);
+        .label-ios{
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+.fst-group{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+
+.checkbox-ios{
+    .checkbox-icon{
+        border-color: color($colors , secondary);
+        background-color: transparent;
+    }
+    .checkbox-checked{
+        background-color: color($colors , secondary);
+    }
+}
